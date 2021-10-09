@@ -1,0 +1,35 @@
+<%-include('partials/header.html') %>
+  <section class="notice">
+<div class="center">
+    <div class="notice-single">
+        <h2><%= notice.title %></h2>
+        <div class="autor-name">
+            <br>
+            <div><img style="width: 100%;" src="<%= notice.image %>" alt=""></div>
+            <br>
+             <span>By <%= notice.actor %></span>  
+        </div>
+        <br>
+        <%- notice.maincontent %>
+    </div>
+    <div class="more-readed">
+        <h3>More Readed</h3>
+        <div class="more-readed-news">
+            <% for( let i=0; i< posts.length;i++){  %>
+                <div class="more-readed-single">
+                    <img src="<%= posts[i].image %>" alt="">
+                    <div class="text-more-readed-single">
+                        <h4><%= posts[i].title %></h4>
+                        <p><%= posts[i].content.substr(0,100) %>...</p>
+                        <span>views:<%= posts[i].views %></span>
+                            <a href="<%= posts[i].slug %>">Read more</a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+ </div>
+  </section>
+<%-include('partials/footer.html') %>
+</body>
+</html>

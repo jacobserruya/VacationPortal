@@ -1,0 +1,25 @@
+<%-include('partials/header.html') %>
+  <section class="notice">
+<div class="center">
+    
+        <h2>How to Surf?</h2>
+       
+    <div class="more-readed" style="width: 100%; text-align: center;">
+        <h3>More Readed</h3>
+        <div class="more-readed-news">
+            <% for( let i=0; i< posts.length;i++){  %>
+        <div class="more-readed-single">
+            <img src="<%= posts[i].image %>" style="width: 300px; height: 200px;">
+            <div class="text-more-readed-single">
+                <h4><%= posts[i].title %></h4>
+                <%- posts[i].maincontent.substr(0,300)%>...
+                    <a href="<%= posts[i].slug %>">Read more</a>
+            </div>
+        </div>
+        <% } %>
+    </div>
+ </div>
+  </section>
+<%-include('partials/footer.html') %>
+</body>
+</html>
